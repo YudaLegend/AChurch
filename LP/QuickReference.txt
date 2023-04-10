@@ -1,0 +1,66 @@
+Sessio 1
+
+Amb enters:
+fromIntegral 4.0 -> 4
+round 3.2 -> 3
+floor 3.8 -> 3
+ceiling 3.2 -> 4
+
+
+Parell > even
+Senar > odd
+min
+max
+
+maxim comu divisor > gcd
+minim comu multiple > lcm
+
+Acces a Tuple
+
+fst (3, "rave") -> 3
+snd (3, "rave") -> "rave"
+    
+
+concat [[a]] -> donat una llista amb llistes dintre [[1,2,3],[4,5],[6],[],[3,3]] -> [1,2,3,4,5,6,3,3]
+
+--------------------------------------
+
+Sessio 2 (funcions d'ordre superior)
+
+funcions anonimes -> || map (\x -> 2*x) [1,2,3] -> [2,4,6]
+        esMajuscula = (`elem` ['A'..'Z']) || esMajuscula 'b' -> False
+
+(.) -> Retorna la composicio de dos funcions || (reverse . sort) [5,3,5,2] -> [5,5,3,2]
+($) ->
+const -> funcio constant
+id -> funcio identidad || map id [1..5] -> [1,2,3,4,5]
+flip -> 
+map -> la funcio map s'aplica una funcio a cada element d'una llista || map odd [1..5] -> [True,False,True,False,True]
+filter -> Dona una subllista dels elements que compleixen el predicat || filter even [2,1,4,6,7] -> [2,4,6] 
+all -> indica si tots els elements compleixen una condicio || all even [2,1,4,6,7] -> False
+any -> indica si algun elemente compleix una condicio || any even [2,1,4,6,7] -> True
+zipWith -> llista resultant d'operar dos llistes || zipWith (+) [1,2,3] [5,1,8,9] -> [6,3,11]
+dropWhile -> Elimina els primers elements de la llista || dropWhile even [2,4,6,7,8] -> [7,8] 
+takeWhile -> Complementari de 'dropWhile' || takeWhile even [2,4,6,7,8] -> [2,4,6]
+iterate -> Retorna una llista infinita || iterate (*2) 1 -> [1,2,4,6,8...] iterate f x retorna la llista infinita [x, f x, f (f x), f (f (f x)), ...].
+foldl -> Desplega un operador per l'esquerra || foldl (+) 0 [3,2,(-1)] -> 4   --(((0+3) + 2) + (-1))
+foldr -> Desplega un operador per la dreta || foldr (+) 0 [3,2,(-1)] -> 4     -- 3 + ((2+ ((-1) + 0 ))
+scanl -> Como la funcions de 'foldl' pero en vez de retornar el valor te retorna la llista
+scanr -> Como la funcions de 'foldr' pero en vez de retornar el valor te retorna la llista
+apli2 -> aplica dos cops d'una funcio a un element || apli2 sqrt 16.0 -> 2.0
+
+
+Session 5
+
+En esta session para utilizar las monada se tiene que haver definido su aplicativo como por ejemplo en el ejercicio de la cola2 que nos pedia.
+Para el aplicativo se tiene que definir el "pure" i el "<*>", "pure" lo que hace es empaquetar tu variable i el "<*>" lo que hace por ejemplo si tienes [(*2), (+2)] <*> [1, 2, 3] 👉[2, 4, 6, 3, 4, 5], es decir, que aplica da funcion de la izquierda al contenido de la derecha.
+
+Una vez que tienes definido el aplicativo para definir la monada es lo mismo, "pure" = "return" y "<*>" = ">>=", en la parte de la funcion seria que "f <*> queue " = "queue >>= f". 
+
+
+
+
+
+
+
+
