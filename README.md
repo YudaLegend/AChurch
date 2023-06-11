@@ -1,4 +1,4 @@
-	# Lambda Calculus
+# Lambda Calculus
 
 EL proyecto consiste en implementar un pequeño interprete de λ-càlcul llamado AChurch.
 
